@@ -330,8 +330,6 @@ public class GenericTest extends AbstractH2Test {
         g.setText50010("text10");
         g.getText50010();
         
-        g.getChildren();
-        g.getParent();
         g.setBizParentId("xyz");
         g.getBizParentId();
     }
