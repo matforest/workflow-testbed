@@ -1,6 +1,7 @@
-name: Workflow-testbed Maven Build
+name: Maven Build
 
 on:
+  workflow_dispatch: 
   push:
     branches: 
       - '*'
@@ -14,9 +15,9 @@ jobs:
     - name: Clean
       uses: AutoModality/action-clean@v1
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Setup Maven Action
-      uses: s4u/setup-maven-action@v1.7.0
+      uses: s4u/setup-maven-action@v1.18.0
       with:
         checkout-fetch-depth: 0
         java-version: 17
@@ -27,7 +28,7 @@ jobs:
         username: ${{ secrets.NEXUSUSERNAME }}
         password: ${{ secrets.NEXUSPASSWORD }}
     - name: Update Maven Settings
-      uses: s4u/maven-settings-action@v2.3.0
+      uses: s4u/maven-settings-action@v3.1.0
       with:
         servers: |
           [{
