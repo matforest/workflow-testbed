@@ -21,6 +21,10 @@
 		<maven.javadoc.skip>true</maven.javadoc.skip>
 		<skipUnitTests>false</skipUnitTests>
 		<skipIntegrationTests>true</skipIntegrationTests>
+		
+		<!-- custom properties -->
+		<skyve-bus.version>2.1.0</skyve-bus.version>
+		<!--./ custom properties -->
 	</properties>
 
 	<repositories>
@@ -423,6 +427,20 @@
 	</build>
 
 	<dependencies>
+	
+		<!-- -->
+		<dependency>
+			<groupId>org.skyve</groupId>
+			<artifactId>skyve-bus-abn</artifactId>
+			<version>${skyve-bus.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.skyve</groupId>
+					<artifactId>skyve-core</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	
 		<dependency>
 			<groupId>org.skyve</groupId>
 			<artifactId>skyve-web</artifactId>

@@ -23,19 +23,6 @@ jobs:
         java-version: 17
         java-distribution: adopt
         maven-version: 3.9.7
-      env:  
-        registry-url: https://repo.skyve.org/repository/skyve-private/
-        username: ${{ secrets.NEXUSUSERNAME }}
-        password: ${{ secrets.NEXUSPASSWORD }}
-    - name: Update Maven Settings
-      uses: s4u/maven-settings-action@v3.1.0
-      with:
-        servers: |
-          [{
-            "id": "skyve",
-            "username": "${{ secrets.NEXUSUSERNAME }}",
-            "password": "${{ secrets.NEXUSPASSWORD }}"
-          }]
     - name: Maven Build
       run: mvn -B clean compile skyve:generateDomain test --file pom.xml
     - name: Test Report
