@@ -14,8 +14,6 @@ jobs:
     steps:
     - name: Clean
       uses: AutoModality/action-clean@v1
-    - name: Checkout
-      uses: actions/checkout@v4
     - name: Setup Maven Action
       uses: s4u/setup-maven-action@v1.18.0
       with:
@@ -23,15 +21,10 @@ jobs:
         java-version: 17
         java-distribution: adopt
         maven-version: 3.9.7
-    - name: Update Maven Settings
-      uses: s4u/maven-settings-action@v3.1.0
-      with:
-        servers: |
-          [{
-            "id": "skyve",
-            "username": "${{ secrets.NEXUSUSERNAME }}",
-            "password": "${{ secrets.NEXUSPASSWORD }}"
-          }]
+      env:  
+        registry-url: https://repo.skyve.org/repository/skyve-private/
+        username: ${{ secrets.NEXUSUSERNAME }}
+        password: ${{ secrets.NEXUSPASSWORD }}
     - name: Maven Build
       run: mvn -B clean compile skyve:generateDomain test --file pom.xml
     - name: Test Report
