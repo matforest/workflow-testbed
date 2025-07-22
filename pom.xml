@@ -34,7 +34,7 @@
 		</repository>
 		<repository>
 			<id>skyve</id>
-			<url>https://repo.skyve.org/repository/skyve/</url>
+			<url>https://repo.skyve.org/repository/skyve-private/</url>
 		</repository>
 		<repository>
 			<id>oss.sonatype.org</id>
