@@ -25,10 +25,6 @@ jobs:
             "username": "${{ secrets.NEXUSUSERNAME }}",
             "password": "${{ secrets.NEXUSPASSWORD }}"
           }]
-      env:  
-        registry-url: https://repo.skyve.org/repository/skyve-private/
-        username: ${{ secrets.NEXUSUSERNAME }}
-        password: ${{ secrets.NEXUSPASSWORD }}
     - name: Maven Build
       run: mvn -B clean compile skyve:generateDomain test
     - name: Test Report
