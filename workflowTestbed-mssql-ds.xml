@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources>
+	<datasource jndi-name="java:/workflowTestbedDB" pool-name="workflowTestbed" enabled="true" jta="false" use-ccm="true">
+		<connection-url>${env.DB_CONNECTION_URL:jdbc:sqlserver://localhost:1433;databaseName=workflowTestbed;sendStringParametersAsUnicode=false;}</connection-url>
+		<driver>sqlserver</driver>
+		<pool>
+			<min-pool-size>5</min-pool-size>
+			<max-pool-size>10</max-pool-size>
+		</pool>
+		<security>
+			<user-name>${env.DB_USERNAME:sa}</user-name>
+			<password>${env.DB_PASSWORD:sa}</password>
+		</security>
+		<validation>
+			<valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.mssql.MSSQLValidConnectionChecker"/>
+			<validate-on-match>true</validate-on-match>
+			<background-validation>false</background-validation>
+		</validation>
+		<statement>
+			<prepared-statement-cache-size>0</prepared-statement-cache-size>
+			<share-prepared-statements>false</share-prepared-statements>
+		</statement>
+	</datasource>
+</datasources>
