@@ -20,6 +20,12 @@ jobs:
         java-version: 17
         java-distribution: adopt
         maven-version: 3.9.7
+        settings-servers: |
+          [{
+            "id": "skyve",
+            "username": "${{ secrets.NEXUSUSERNAME }}",
+            "password": "${{ secrets.NEXUSPASSWORD }}"
+          }]
       env:  
         registry-url: https://repo.skyve.org/repository/skyve-private/
         username: ${{ secrets.NEXUSUSERNAME }}
