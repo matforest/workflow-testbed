@@ -25,22 +25,22 @@ jobs:
             "username": "${{ secrets.NEXUSUSERNAME }}",
             "password": "${{ secrets.NEXUSPASSWORD }}"
           }]
-    # - name: Maven Build
-    #   run: mvn -B clean compile skyve:generateDomain jacoco:prepare-agent test jacoco:report
-    # - name: Test Report
-    #   uses: dorny/test-reporter@v2
-    #   if: success() || failure()
-    #   with:
-    #     name: Test Report
-    #     path: '**/target/surefire-reports/TEST-*.xml'
-    #     reporter: java-junit
-    # - name: Upload coverage to Codecov
-    #   uses: codecov/codecov-action@v5
-    #   env:
-    #     CODECOV_TOKEN: ${{ secrets.CODECOV_ORG_TOKEN }}
-    - name: Reporting
-      # if: github.event_name == 'pull_request'
-      run: |
-        echo 'Event: ${{ toJSON(github.event) }}' >> $GITHUB_STEP_SUMMARY
-        echo "Commit Title: ${{ github.event.pull_request.title }}"
-        echo "Commit Body: ${{ github.event.pull_request.body }}"
+    - name: Maven Build
+      run: mvn -B clean compile skyve:generateDomain jacoco:prepare-agent test jacoco:report
+    - name: Test Report
+      uses: dorny/test-reporter@v2
+      if: success() || failure()
+      with:
+        name: Test Report
+        path: '**/target/surefire-reports/TEST-*.xml'
+        reporter: java-junit
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v5
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_ORG_TOKEN }}
+    - name: Upload jacoco report
+      uses: actions/upload-artifact@v4
+      if: success() || failure()
+      with:
+        name: jacoco-report
+        path: target/site/jacoco
