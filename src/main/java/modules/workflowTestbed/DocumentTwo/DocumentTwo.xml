@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="http://www.skyve.org/xml/document" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="DocumentTwo" xsi:schemaLocation="http://www.skyve.org/xml/document ../../../schemas/document.xsd">
+    <persistent name="WOR_DocumentTwo"/>
+    <singularAlias>DocumentTwo</singularAlias>
+    <pluralAlias>documenttwoes</pluralAlias>
+    <bizKey expression="DocumentTwo"/>
+    <attributes/>
+</document>

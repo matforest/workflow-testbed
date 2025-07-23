@@ -38,3 +38,15 @@ jobs:
       uses: codecov/codecov-action@v5
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_ORG_TOKEN }}
+    - name: Upload jacoco report
+      uses: actions/upload-artifact@v4
+      if: success() || failure()
+      with:
+        name: jacoco-report
+        path: target/site/jacoco
+    - name: Add JaCoCo Coverage Summary
+      uses: jjmrocha/jacoco-summary@v1.1.1
+      with:
+        jacoco-csv-file: target/site/jacoco/jacoco.csv
+    - name: jacoco-badge-generator
+      uses: cicirello/jacoco-badge-generator@v2.12.1
