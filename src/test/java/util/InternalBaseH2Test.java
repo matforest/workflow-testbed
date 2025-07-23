@@ -95,17 +95,21 @@ abstract class InternalBaseH2Test {
 	/**
 	 * Common tear down after all tests
 	 */
-	protected static void internalTearDown() throws IOException {
-		if (weld != null) {
-			weld.shutdown();
-		}
+    protected static void internalTearDown() throws IOException {
+        if (weld != null) {
+            weld.shutdown();
+        }
 
-		// clean up any temporary content directories after shutdown
-		File contentDir = new File(UtilImpl.CONTENT_DIRECTORY);
-		if (contentDir.exists()) {
-			FileUtil.delete(contentDir);
-		}
-	}
+        // clean up any temporary content directories after shutdown
+        File contentDir = new File(UtilImpl.CONTENT_DIRECTORY);
+        if (contentDir.exists()) {
+            try {
+                FileUtil.delete(contentDir);
+            } catch (IOException e) {
+                System.err.println(e.getMessage());
+            }
+        }
+    }
 
 	/**
 	 * Common setup before each test

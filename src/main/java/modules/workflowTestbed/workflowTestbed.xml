@@ -3,6 +3,7 @@
     <homeRef>list</homeRef>
     <homeDocument>NewDocument</homeDocument>
     <documents>
+        <document ref="DocumentTwo"/>
         <document ref="NewDocument"/>
     </documents>
     <roles>
