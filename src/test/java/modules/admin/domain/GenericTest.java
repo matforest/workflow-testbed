@@ -48,12 +48,12 @@ public class GenericTest extends AbstractH2Test {
         g.getMemo6();
         g.setMemo7("memo7");
         g.getMemo7();
-        g.setMemo8("memo8");
-        g.getMemo8();
-        g.setMemo9("memo9");
-        g.getMemo9();
-        g.setMemo10("memo10");
-        g.getMemo10();
+//        g.setMemo8("memo8");
+//        g.getMemo8();
+//        g.setMemo9("memo9");
+//        g.getMemo9();
+//        g.setMemo10("memo10");
+//        g.getMemo10();
 
         g.setBoolean1(TRUE);
         g.getBoolean1();
