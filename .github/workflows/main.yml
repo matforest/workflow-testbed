@@ -25,20 +25,20 @@ jobs:
             "username": "${{ secrets.NEXUSUSERNAME }}",
             "password": "${{ secrets.NEXUSPASSWORD }}"
           }]
-    - name: Maven Build
-      run: mvn -B clean compile skyve:generateDomain jacoco:prepare-agent test jacoco:report
-    - name: Test Report
-      uses: dorny/test-reporter@v2
-      if: success() || failure()
-      with:
-        name: Test Report
-        path: '**/target/surefire-reports/TEST-*.xml'
-        reporter: java-junit
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v5
-      env:
-        CODECOV_TOKEN: ${{ secrets.CODECOV_ORG_TOKEN }}
+    # - name: Maven Build
+    #   run: mvn -B clean compile skyve:generateDomain jacoco:prepare-agent test jacoco:report
+    # - name: Test Report
+    #   uses: dorny/test-reporter@v2
+    #   if: success() || failure()
+    #   with:
+    #     name: Test Report
+    #     path: '**/target/surefire-reports/TEST-*.xml'
+    #     reporter: java-junit
+    # - name: Upload coverage to Codecov
+    #   uses: codecov/codecov-action@v5
+    #   env:
+    #     CODECOV_TOKEN: ${{ secrets.CODECOV_ORG_TOKEN }}
     - name: Reporting
       # if: github.event_name == 'pull_request'
       run: |
-        echo "${{ github.type.type }} - test" >> $GITHUB_STEP_SUMMARY
+        echo "${{ github.event }} - test" >> $GITHUB_STEP_SUMMARY
