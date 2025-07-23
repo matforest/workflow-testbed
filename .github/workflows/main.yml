@@ -38,3 +38,7 @@ jobs:
       uses: codecov/codecov-action@v5
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_ORG_TOKEN }}
+    - name: Reporting
+      # if: github.event_name == 'pull_request'
+      run: |
+        echo "${{ github.type.type }} - test" >> $GITHUB_STEP_SUMMARY
