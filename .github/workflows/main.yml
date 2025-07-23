@@ -44,3 +44,7 @@ jobs:
       with:
         name: jacoco-report
         path: target/site/jacoco
+    - name: Add JaCoCo Coverage Summary
+      uses: jjmrocha/jacoco-summary@v1.1.1
+      with:
+        jacoco-csv-file: target/site/jacoco/jacoco.csv
