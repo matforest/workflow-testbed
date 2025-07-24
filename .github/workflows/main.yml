@@ -52,3 +52,8 @@ jobs:
         jacoco-csv-file: target/site/jacoco/jacoco.csv
     - name: jacoco-badge-generator
       uses: cicirello/jacoco-badge-generator@v2.12.1
+    - name: Run codacy-coverage-reporter
+      uses: codacy/codacy-coverage-reporter-action@v1.3.0
+      with:
+        project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+        coverage-reports: target/site/jacoco/jacoco.csv
