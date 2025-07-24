@@ -1,7 +1,7 @@
 ## Code Coverage
 
 
-![Coverage](https://codecov.io/github/matforest/workflow-testbed/graphs/tree.svg?token=CCIS7HBMMD)
+![Coverage](https://codecov.io/github/testorgmatf/workflow-testbed/graphs/tree.svg?token=CCIS7HBMMD)
 
 ## Getting Started
 
