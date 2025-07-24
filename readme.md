@@ -12,9 +12,11 @@ This test project's analysis in Codecov: https://app.codecov.io/gh/testorgmatf/w
 
 ## Pricing
 
-The free tier allows only a single user to log in; so for private repositories only one user would be able to log in and view the dashboard. But that might be fine if we configure it to add comments to pull requests with coverage details.
+The free tier allows only a single user to log in; so for private repositories only one user would be able to log in and view/manage the dashboard. But that might be fine if we configure it to add comments to pull requests with coverage details.
 
-The rest of [Codecov's pricing is here](https://about.codecov.io/pricing/).
+At the free tier we'd be limited to 250 builds per month; which is likely only enough for a couple of active projects.
+
+The rest of [Codecov's pricing is here](https://about.codecov.io/pricing/). Starts at $4 per user to get 2500 builds, otherwise $10 per user for unlimited.
 
 ## Usage
 
@@ -58,4 +60,8 @@ Analysis is pretty slow. Prohibitively expensive for private projects.
 
 # Coveralls
 
-[Test project here](https://coveralls.io/github/testorgmatf/workflow-testbed). Looks very similar to Codecov
+[Test project here](https://coveralls.io/github/testorgmatf/workflow-testbed). Looks very similar to Codecov.
+
+## Pricing
+
+[Pricing info here](https://coveralls.io/pricing). By my read we'd need to be on at least the _Org_ level to use on private repositories; for $50 per month.
