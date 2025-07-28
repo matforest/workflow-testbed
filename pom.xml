@@ -56,6 +56,26 @@
 		<finalName>${finalName}</finalName>
 		<pluginManagement>
 			<plugins>
+
+				<plugin>
+					<groupId>com.diffplug.spotless</groupId>
+					<artifactId>spotless-maven-plugin</artifactId>
+					<version>2.46.1</version>
+					<configuration>
+					<lineEndings>PRESERVE</lineEndings>
+						<java>
+							<excludes>
+								<exclude>src/main/java/modules/admin/**/*</exclude>
+								<exclude>src/test/java/util/**/*</exclude>
+								<exclude>src/main/java/org/skyve/**/*</exclude>
+							</excludes>
+							<eclipse>
+								<file>${project.basedir}/.config/eclipse-code-format-profile-2025.xml</file>
+							</eclipse>
+						</java>
+					</configuration>
+				</plugin>
+
 				<plugin>
 					<groupId>org.jacoco</groupId>
 					<artifactId>jacoco-maven-plugin</artifactId>
@@ -78,9 +98,9 @@
 				</plugin>
 				
 				<plugin>
-				    <groupId>com.github.hazendaz.maven</groupId>
-				    <artifactId>coveralls-maven-plugin</artifactId>
-				    <version>4.7.0</version>
+					<groupId>com.github.hazendaz.maven</groupId>
+					<artifactId>coveralls-maven-plugin</artifactId>
+					<version>4.7.0</version>
 				</plugin>
 
 				<plugin>
@@ -325,14 +345,14 @@
 								<include>topbar.xhtml</include>
 							</includes>
 						</webResource>
-                        <webResource>
-                            <directory>src/main/webapp/WEB-INF/pages/templates/ultima</directory>
-                            <targetPath>WEB-INF/pages/templates/ultima</targetPath>
-                            <filtering>true</filtering>
-                            <includes>
-                                <include>template.xhtml</include>
-                            </includes>
-                        </webResource>
+						<webResource>
+							<directory>src/main/webapp/WEB-INF/pages/templates/ultima</directory>
+							<targetPath>WEB-INF/pages/templates/ultima</targetPath>
+							<filtering>true</filtering>
+							<includes>
+								<include>template.xhtml</include>
+							</includes>
+						</webResource>
 					</webResources>
 				</configuration>
 				<executions>
@@ -513,8 +533,8 @@
 		</dependency>
 		<!-- Jakarta EL implementation -->
 		<dependency>
-		    <groupId>org.glassfish.expressly</groupId>
-		    <artifactId>expressly</artifactId>
+			<groupId>org.glassfish.expressly</groupId>
+			<artifactId>expressly</artifactId>
 			<version>5.0.0</version>
 			<scope>test</scope>
 		</dependency>
