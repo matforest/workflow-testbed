@@ -6,8 +6,8 @@ import modules.workflowTestbed.domain.DocumentTwo;
 
 public class DocumentTwoExtension extends DocumentTwo {
 
-    public String doNothing() {
-        
-        return RandomStringUtils.random(50);
-    }
+	public String doNothing() {
+
+		return RandomStringUtils.random(50);
+	}
 }
