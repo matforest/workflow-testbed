@@ -42,7 +42,7 @@ public class DefaultUxUiSelector implements UxUiSelector {
 		if (user != null && user.isInRole(Startup.MODULE_NAME, "SecurityAdministrator") && UtilImpl.SHOW_SETUP) {
 			// check the user has not already dismissed the startup page this session
 			Object dismissed = session != null ? session.getAttribute(DISMISS_STARTUP) : null;
-			if (! Boolean.TRUE.equals(dismissed)) {
+			if (!Boolean.TRUE.equals(dismissed)) {
 				Util.LOGGER.info("ROUTING TO STARTUP");
 				return UxUis.STARTUP;
 			}
@@ -62,13 +62,13 @@ public class DefaultUxUiSelector implements UxUiSelector {
 			case tablet:
 				return UxUis.TABLET;
 			// uncomment to use Smart Client by default for desktop user agents
-			//case desktop:
-			//return UxUis.DESKTOP;
+			// case desktop:
+			// return UxUis.DESKTOP;
 			default:
 				return UxUis.EXTERNAL;
 		}
 	}
-	
+
 	@Override
 	public UxUi emulate(UserAgentType userAgentType, HttpServletRequest request) {
 		switch (userAgentType) {
