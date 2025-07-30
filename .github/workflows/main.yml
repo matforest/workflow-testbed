@@ -28,7 +28,8 @@ jobs:
             "password": "${{ secrets.NEXUSPASSWORD }}"
           }]
     - name: Maven Build
-      run: mvn -B clean compile skyve:generateDomain jacoco:prepare-agent test jacoco:report
+      # run: mvn -B clean compile skyve:generateDomain jacoco:prepare-agent test jacoco:report
+      run: mvn -B clean compile skyve:generateDomain test
     - name: Test Report
       uses: dorny/test-reporter@v2
       if: success() || failure()
