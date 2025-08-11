@@ -32,7 +32,8 @@ jobs:
           }]
     - uses: pmd/pmd-github-action@v2
       with:
-        rulesets: '.config/maven-pmd-plugin-default.xml'
+        rulesets: '.config/ruleset.xml'
+        analyzeModifiedFilesOnly: false
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v3
       with:
