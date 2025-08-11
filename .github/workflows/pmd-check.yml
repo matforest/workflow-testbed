@@ -7,7 +7,7 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  check-style:
+  code-analysis:
 
     runs-on: ubuntu-latest
 
@@ -32,7 +32,7 @@ jobs:
           }]
     - uses: pmd/pmd-github-action@v2
       with:
-        rulesets: 'https://raw.githubusercontent.com/apache/maven-pmd-plugin/HEAD/src/main/resources/rulesets/java/maven-pmd-plugin-default.xml'
+        rulesets: '.config\maven-pmd-plugin-default.xml'
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v3
       with:
