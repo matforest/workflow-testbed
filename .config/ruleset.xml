@@ -8,6 +8,7 @@
         PMD Ruleset for Java static analysis
     </description>
 
+    <exclude-pattern>.*</exclude-pattern>
     <include-pattern>.*/src/main/java/.*</include-pattern>
 
     <!-- Import whole categories -->
