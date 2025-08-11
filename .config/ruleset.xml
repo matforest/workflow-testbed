@@ -8,6 +8,8 @@
         PMD Ruleset for Java static analysis
     </description>
 
+    <include-pattern>.*/src/main/java/.*</include-pattern>
+
     <!-- Import whole categories -->
     <rule ref="category/java/bestpractices.xml" />
     <!-- <rule ref="category/java/codestyle.xml" /> -->
