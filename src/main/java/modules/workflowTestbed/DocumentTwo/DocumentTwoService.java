@@ -4,6 +4,13 @@ public class DocumentTwoService {
 
 	public String doAThing() {
 
-		return "hello";
+		try {
+			return "hello";
+		} catch (Exception e) {
+			// TODO: handle exception
+			// hello pmd!
+		}
+
+		return null;
 	}
 }
